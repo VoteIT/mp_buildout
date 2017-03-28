@@ -26,7 +26,7 @@
 					</xsl:element>
 
 					<xsl:element name="Ruta">
-						<xsl:text>Bifall [ ]	Avslag [ ]	Besvarad [ ]</xsl:text>
+						<xsl:text>Bifall [ ]   Avslag [ ]   Besvarad [ ]</xsl:text>
 						<xsl:value-of select="$LB"/>
 					</xsl:element>
 
@@ -47,16 +47,15 @@
 								</xsl:if>
 							</xsl:for-each>
 							<xsl:value-of select="$LB"/>
-							<xsl:value-of select="$LB"/>
 						</xsl:element>
 						<xsl:element name="EndorsementText">
 							<xsl:value-of select="myNS:AgendaItem_endorsements_text"/>
-							<xsl:value-of select="$LB"/>
 							<xsl:value-of select="$LB"/>
 						</xsl:element>
 					</xsl:element>
 
 					<xsl:element name="Body">
+						<xsl:value-of select="$LB"/>
 						<xsl:value-of select="myNS:AgendaItem_body"/>
 						<xsl:value-of select="$LB"/>
 						<xsl:value-of select="$LB"/>
@@ -81,11 +80,6 @@
 						<xsl:element name="DiscussionPosts_heading">Partistyrelsens yttrande &#xA;&#xA;</xsl:element>
 
 						<xsl:for-each select="myNS:DiscussionPosts/myNS:DiscussionPost">
-
-							<xsl:element name="DiscussionPost_creators">
-								<xsl:value-of select="myNS:DiscussionPost_creator"/>
-								<xsl:value-of select="$LB"/>
-							</xsl:element>
 
 							<xsl:element name="DiscussionPost_text">
 								<xsl:value-of select="myNS:DiscussionPost_text"/>
