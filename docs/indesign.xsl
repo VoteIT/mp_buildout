@@ -23,17 +23,15 @@
 					<xsl:element name="Title">
 						<xsl:value-of select="myNS:AgendaItem_title"/>
 						<xsl:value-of select="$LB"/>
-						<xsl:value-of select="$LB"/>
 					</xsl:element>
 
-					<xsl:element name="AgendaItemTag">
-						<xsl:element name="AgendaItemTag_text">Motionens ID: </xsl:element>
-						<xsl:value-of select="myNS:AgendaItem_hashtag"/>
+					<xsl:element name="Ruta">
+						<xsl:text>Bifall [ ]	Avslag [ ]	Besvarad [ ]</xsl:text>
 						<xsl:value-of select="$LB"/>
 					</xsl:element>
 
 					<xsl:element name="MotionCreator">
-						<xsl:element name="AgendaItem_motion_creator_text">Inskickad av:</xsl:element>
+						<xsl:element name="AgendaItem_motion_creator_text">Inskickad av: </xsl:element>
 						<xsl:value-of select="myNS:AgendaItem_motion_creator"/>
 						<xsl:value-of select="$LB"/>
 					</xsl:element>
@@ -45,6 +43,7 @@
 								<xsl:value-of select="current()"/>
 								<xsl:if test="position()!=last()">
 									<xsl:value-of select="$COMMA"/>
+									<xsl:value-of select="$SPACE"/>
 								</xsl:if>
 							</xsl:for-each>
 							<xsl:value-of select="$LB"/>
@@ -58,32 +57,20 @@
 					</xsl:element>
 
 					<xsl:element name="Body">
-						<xsl:element name="Body_heading">Motionens brödtext:</xsl:element>
-						<xsl:value-of select="$LB"/>
 						<xsl:value-of select="myNS:AgendaItem_body"/>
 						<xsl:value-of select="$LB"/>
 						<xsl:value-of select="$LB"/>
 					</xsl:element>
 
 					<xsl:element name="Proposals">
-						<xsl:element name="Proposals_heading">Förslag &#xA;&#xA;</xsl:element>
-
 						<xsl:for-each select="myNS:Proposals/myNS:Proposal">
-							<xsl:element name="ProposalByline">
-								<xsl:element name="Proposal_aid">
-									<xsl:value-of select="myNS:Proposal_aid"/>
-								</xsl:element>
-
-								<xsl:element name="Proposal_creator">
-									<xsl:element name="Proposal_by"> av </xsl:element>
-									<xsl:value-of select="myNS:Proposal_creator"/>
-									<xsl:value-of select="$LB"/>
-								</xsl:element>
-							</xsl:element>
 
 							<xsl:element name="Proposal_text">
+								<xsl:element name="Proposal_aid">
+									<xsl:value-of select="myNS:Proposal_aid"/>
+									<xsl:text>. </xsl:text>
+								</xsl:element>
 								<xsl:value-of select="myNS:Proposal_text"/>
-								<xsl:value-of select="$LB"/>
 								<xsl:value-of select="$LB"/>
 							</xsl:element>
 
@@ -91,7 +78,7 @@
 					</xsl:element>
 
 					<xsl:element name="DiscussionPosts">
-						<xsl:element name="DiscussionPosts_heading">Yttranden &#xA;&#xA;</xsl:element>
+						<xsl:element name="DiscussionPosts_heading">Partistyrelsens yttrande &#xA;&#xA;</xsl:element>
 
 						<xsl:for-each select="myNS:DiscussionPosts/myNS:DiscussionPost">
 
