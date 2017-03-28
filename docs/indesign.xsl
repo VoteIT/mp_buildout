@@ -77,8 +77,6 @@
 					</xsl:element>
 
 					<xsl:element name="DiscussionPosts">
-						<xsl:element name="DiscussionPosts_heading">Partistyrelsens yttrande &#xA;</xsl:element>
-
 						<xsl:for-each select="myNS:DiscussionPosts/myNS:DiscussionPost">
 
 							<xsl:element name="DiscussionPost_text">
