@@ -16,3 +16,6 @@ develop-eggs
 parts
 src
 *.pyc
+local
+share
+pip-selfcheck.json
